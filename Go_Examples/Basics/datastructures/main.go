@@ -2,11 +2,10 @@ package main
 
 import (
 	"fmt"
-	"datastructures"
-	"array_and_slice"
+	"datastructures/array"
 )
 
 func main(){
-	datastructures.datastructures()
+	fmt.Println("using the custom module")
+	array.ArrayExample()
 }
-
