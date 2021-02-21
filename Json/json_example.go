@@ -5,6 +5,12 @@ import (
 	"fmt"
 )
 
+type profile struct {
+	Name       string
+	Place      string
+	Occupation string
+}
+
 func main() {
 
 	dict := make(map[string]string)
@@ -21,4 +27,13 @@ func main() {
 		return
 	}
 	fmt.Println(jsonString)
+
+	//decoding a json string
+	var unMarshalled profile
+	err = json.Unmarshal(jsonString, &unMarshalled)
+	if err != nil {
+		fmt.Println("error decoding json")
+		return
+	}
+	fmt.Println(unMarshalled)
 }
