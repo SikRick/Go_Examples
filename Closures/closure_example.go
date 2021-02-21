@@ -7,6 +7,12 @@ func simpleFunction(arg string) {
 	fmt.Println(arg)
 }
 
+func generateAnonymousFunction() func(string) {
+	return func(arg string) {
+		fmt.Println(arg)
+	}
+}
+
 func main() {
 	simpleFunction("Hello World!")
 
@@ -14,4 +20,7 @@ func main() {
 	func(arg string) {
 		fmt.Printf("Im inside the main and i say %s \n", arg)
 	}("Hey There!")
+
+	newFunction := generateAnonymousFunction()
+	newFunction("Hello from the new function!")
 }
