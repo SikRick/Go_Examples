@@ -9,4 +9,9 @@ func simpleFunction(arg string) {
 
 func main() {
 	simpleFunction("Hello World!")
+
+	//An anonymous function inside the main function
+	func(arg string) {
+		fmt.Printf("Im inside the main and i say %s \n", arg)
+	}("Hey There!")
 }
