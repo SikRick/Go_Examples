@@ -17,6 +17,10 @@ func worker(id int, jobs <-chan int, res chan<- int) {
 		res <- job * job
 		fmt.Printf("worker %d : finished job %d", id, job)
 	}
+	//close(results)
+	//putting close here and having a range call over the results channel below wont work becuase,
+	//the first worker to finish its jobs closes the results channel, and other workers wont be able to send their results
+	//sending to a closed channel will cause panic
 
 }
 
